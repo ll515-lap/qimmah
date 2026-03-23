@@ -4,29 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>قِمّة | Qimmah - خدمات رقمية</title>
+<title>قِمّة | Qimmah</title>
 
 <style>
 
+
 body {
   font-family: "Cairo", sans-serif;
-  background: #c8bcb8;
+  background-color: #c8bcb8;
+  color: #222;
   margin: 0;
   text-align: center;
-  color: #2f2f2f;
 }
 
-/* ===== Header ===== */
+/* Header */
 header {
-  padding: 30px 10px;
+  padding: 25px 0 10px;
 }
 
 header img {
-  width: 110px;
-  border-radius: 12px;
+  width: 120px;
+  border-radius: 10px;
 }
 
-header h1 {
+h1 {
   margin: 10px 0 5px;
 }
 
@@ -35,111 +36,83 @@ header p {
   font-size: 14px;
 }
 
-/* ===== Section General ===== */
-section {
-  padding: 30px 15px;
-}
-
-/* ===== About ===== */
+/* About */
 #about {
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 25px;
   background: rgba(255,255,255,0.6);
   border-radius: 15px;
-  margin: 20px;
-  padding: 20px;
 }
 
-/* ===== Services ===== */
+/* Services (نفسك تقريبًا) */
 .services {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
 }
 
 .service {
   background: #ffffffd2;
   padding: 18px;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 400px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
 .service:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 18px rgba(0,0,0,0.15);
 }
 
-/* ===== Why Us ===== */
+/* Why us */
+.why-us {
+  padding: 30px 15px;
+}
+
 .why-box {
-  background: #ffffffd9;
+  background: #ffffffd2;
   margin: 10px auto;
   padding: 15px;
   border-radius: 12px;
   max-width: 400px;
 }
 
-/* ===== Reviews ===== */
-.review {
-  background: #fff;
-  margin: 10px auto;
-  padding: 15px;
-  border-radius: 12px;
-  max-width: 400px;
-}
-
-.review span {
-  color: #777;
-}
-
-/* ===== CTA Button ===== */
-.cta {
+/* Portfolio */
+.portfolio-link {
   display: inline-block;
-  margin: 30px;
-  padding: 14px 25px;
-  background: #2f2f2f;
-  color: #fff;
+  padding: 12px 25px;
   border-radius: 12px;
+  background: #d8d3c4;
+  color: #333;
+  font-size: 18px;
   text-decoration: none;
+  transition: 0.3s;
 }
 
-/* ===== Popup ===== */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  justify-content: center;
-  align-items: center;
+.portfolio-link:hover {
+  transform: translateY(-4px);
 }
 
-.popup-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-/* ===== Animation ===== */
-.fade {
+/* Animations */
+.fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition: 0.6s;
+  transition: 0.8s;
 }
 
-.show {
+.fade-in.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ===== Footer ===== */
-footer {
-  background: #d9d2c7;
+/* Footer */
+#footer {
+  background-color: #d9d2c7;
   padding: 20px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 </style>
@@ -147,44 +120,44 @@ footer {
 
 <body>
 
-<!-- ===== Header ===== -->
-<header class="fade">
+<!-- Header -->
+<header class="fade-in">
 <img src="logo.png">
 <h1>قِمّة | Qimmah</h1>
 <p>نصنع لك هوية رقمية تليق بك</p>
 </header>
 
-<!-- ===== About ===== -->
-<section id="about" class="fade">
+<!-- About -->
+<section id="about" class="fade-in">
 <h2>من نحن؟</h2>
 <p>
-نحن فريق قِمّة، مجموعة شباب نؤمن أن البداية البسيطة ممكن تتحول إلى شيء عظيم.
-نقدم خدمات تصميم ومحتوى رقمي بجودة عالية وأسعار مناسبة.
+نحن فريق قِمّة، مجموعة شباب نحول الأفكار إلى تصاميم وهوية رقمية باحتراف.
+نشتغل بشغف ونطور أنفسنا يوميًا لنقدم أفضل نتيجة ممكنة.
 </p>
 </section>
 
-<!-- ===== Services ===== -->
-<section class="services fade">
+<!-- Services -->
+<section class="services">
 
-<div class="service" onclick="openPopup('logo')">
-<h3>🎨 تصميم لوقو</h3>
-<p>6 ريال</p>
+<div class="service fade-in" onclick="openPopup('logo')">
+<h2>🎨 تصميم لوقو</h2>
+<p>السعر: 6 ريال</p>
 </div>
 
-<div class="service" onclick="openPopup('video')">
-<h3>🎬 مونتاج فيديو</h3>
-<p>25 ريال</p>
-</div>
-
-<div class="service" onclick="openPopup('ppt')">
-<h3>💻 عروض تقديمية</h3>
+<div class="service fade-in" onclick="openPopup('presentation')">
+<h2>💻 عرض تقديمي</h2>
 <p>20 ريال</p>
+</div>
+
+<div class="service fade-in" onclick="openPopup('video')">
+<h2>🎬 مونتاج فيديو</h2>
+<p>25 ريال</p>
 </div>
 
 </section>
 
-<!-- ===== Why Us ===== -->
-<section class="fade">
+<!-- Why us -->
+<section class="why-us fade-in">
 <h2>ليش تختار قِمّة؟</h2>
 
 <div class="why-box">🚀 سرعة في التنفيذ</div>
@@ -194,28 +167,16 @@ footer {
 
 </section>
 
-<!-- ===== Reviews ===== -->
-<section class="fade">
-<h2>آراء عملائنا</h2>
+<!-- Portfolio (رجعناه 🔥) -->
+<section class="portfolio-section fade-in">
+<h2>معرض الأعمال :</h2>
 
-<div class="review">
-<p>شغلهم سريع واحترافي 🔥</p>
-<span>- عميل</span>
-</div>
-
-<div class="review">
-<p>أفضل تجربة تعامل 👏</p>
-<span>- عميل</span>
-</div>
-
+<a href="portfolio.html" class="portfolio-link">
+عرض الأعمال
+</a>
 </section>
 
-<!-- ===== CTA ===== -->
-<a href="https://wa.me/966537439959" class="cta">
-ابدأ مشروعك الآن 🚀
-</a>
-
-<!-- ===== Popup Example ===== -->
+<!-- Popup -->
 <div id="popup-logo" class="popup">
 <div class="popup-content">
 <h2>تصميم لوقو</h2>
@@ -224,25 +185,24 @@ footer {
 </div>
 </div>
 
-<!-- ===== JS ===== -->
+<!-- JS -->
 <script>
+const elements = document.querySelectorAll('.fade-in');
 
-function openPopup(id){
-document.getElementById("popup-"+id).style.display="flex";
-}
-
-window.addEventListener("scroll", ()=>{
-document.querySelectorAll(".fade").forEach(el=>{
-if(el.getBoundingClientRect().top < window.innerHeight - 50){
-el.classList.add("show");
+function showElements() {
+elements.forEach(el => {
+if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+el.classList.add('show');
 }
 });
-});
+}
 
+window.addEventListener('scroll', showElements);
+window.addEventListener('load', showElements);
 </script>
 
-<!-- ===== Footer ===== -->
-<footer>
+<!-- Footer -->
+<footer id="footer">
 <p>© 2025 قِمّة | Qimmah</p>
 </footer>
 
