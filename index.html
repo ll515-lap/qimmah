@@ -67,6 +67,44 @@ header p {
   box-shadow: 0px 8px 18px rgba(0,0,0,0.15);
 }
 
+.whatsapp-button {
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-size: 15px;
+  display: inline-block;
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* تأثير لمعان */
+.whatsapp-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+.whatsapp-button:hover::before {
+  left: 130%;
+}
+
+/* حركة عند الهوفر */
+.whatsapp-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+}
+
 /* Why us */
 .why-us {
   padding: 30px 15px;
@@ -94,6 +132,26 @@ header p {
 
 .portfolio-link:hover {
   transform: translateY(-4px);
+}
+
+.whatsapp-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.whatsapp-fixed:hover {
+  transform: scale(1.08);
 }
 
 /* Animations */
@@ -151,12 +209,27 @@ target="_blank">
 
 <div class="service fade-in" onclick="openPopup('presentation')">
 <h2>💻 عرض تقديمي</h2>
-<p>20 ريال</p>
+<p>20 ريال أو 2 ريال لكل شريحة</p>
+<a class="whatsapp-button" 
+href="https://wa.me/966537439959?text=السلام عليكم، أبغى تصميم عرض تقديمي" 
+target="_blank">
+طلب الخدمة عبر واتساب
+</a>
 </div>
 
 <div class="service fade-in" onclick="openPopup('video')">
 <h2>🎬 مونتاج فيديو</h2>
 <p>25 ريال</p>
+</div>
+
+<div class="service fade-in" onclick="openPopup('research')">
+<h2>📚 بحوث ومشاريع </h2>
+<p>10 ريال</p>
+<a class="whatsapp-button" 
+href="https://wa.me/966537439959?text=السلام عليكم، أبغى مساعدة في بحث أو مشروع" 
+target="_blank">
+طلب الخدمة عبر واتساب
+</a>
 </div>
 
 </section>
@@ -197,6 +270,10 @@ el.classList.add('show');
 window.addEventListener('scroll', showElements);
 window.addEventListener('load', showElements);
 </script>
+
+<a href="https://wa.me/966537439959" target="_blank" class="whatsapp-fixed">
+  تواصل عبر واتساب
+</a>
 
 <!-- Footer -->
 <footer id="footer">
