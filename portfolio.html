@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض الأعمال – لمسة ليث</title>
-    <link rel="stylesheet" href="index.html">
-    <style>
-        body {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>معرض الأعمال – قِمّة | Qimmah</title>
+
+<style>
+
+body {
     font-family: "Cairo", sans-serif;
     background-color: #c8bcb8;
     color: #222;
     margin: 0;
-    padding: 0;
     text-align: center;
 }
 
+/* عنوان */
+h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+p {
+    color: #444;
+    font-size: 15px;
+}
+
+/* فلتر */
+.filter-buttons {
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #d8d3c4;
+}
+
+/* الشبكة */
 .portfolio-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -24,79 +51,134 @@
     margin: auto;
 }
 
+/* العنصر */
 .portfolio-item {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    background: rgba(255,255,255,0.8);
+    padding: 15px;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: 0.3s ease;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
+/* الصور */
 .portfolio-item img {
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 10px;
+    transition: 0.3s;
 }
 
-h2 {
-    margin-bottom: 10px;
+.portfolio-item:hover img {
+    transform: scale(1.05);
 }
 
-p {
-    color: #444;
-    font-size: 15px;
+/* زر الطلب */
+.order-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #2f2f2f;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
 }
-    </style>
+
+/* رجوع */
+.back-link {
+    display: block;
+    margin: 40px;
+    text-decoration: none;
+    color: #333;
+}
+
+</style>
 </head>
+
 <body>
 
-<section style="padding:60px 0; text-align:center;">
-    <h2>معرض الأعمال</h2>
-    <p style="margin-bottom:30px; color:#555;">هنا تشوف بعض من شغلي في اللوقوهات والتصاميم والعروض.</p>
+<section style="padding:60px 0;">
 
-    <div class="portfolio-container">
+<h2>معرض أعمال قِمّة</h2>
+<p style="margin-bottom:30px;">
+نماذج من أعمالنا في التصميم والمونتاج والعروض التقديمية
+</p>
 
-        <div class="portfolio-item">
-            <img src="logo2.png" alt="عمل 1">
-            <p>تصميم لوقو – ستايل بسيط وراقي</p>
-        </div>
+<!-- فلتر -->
+<div class="filter-buttons">
+<button onclick="filter('all')">الكل</button>
+<button onclick="filter('logo')">لوقو</button>
+<button onclick="filter('ppt')">عروض</button>
+<button onclick="filter('video')">مونتاج</button>
+</div>
 
-        <div class="portfolio-item">
-            <img src="LOGO3.png" alt="عمل 2">
-            <p>تصميم لوقو – ستايل انيق وجذاب</p>
-        </div>
+<div class="portfolio-container">
 
-        <div class="portfolio-item">
-            <img src="rr.png" alt="عمل 3">
-            <p>عرض تقديمي – أنيق ومناسب للمهام</p>
-        </div>
+<!-- لوقو -->
+<div class="portfolio-item" data-type="logo">
+<img src="logo2.png">
+<p>تصميم لوقو – ستايل بسيط وراقي</p>
+<a href="https://wa.me/966537439959" class="order-btn">اطلب نفس الخدمة</a>
+</div>
 
-        <div class="portfolio-item">
-            <img src="images/work3.jpg" alt="عمل 4">
-            <p>مونتاج فيديو قصير – حركة ناعمة وإخراج جميل</p>
-        </div>
+<div class="portfolio-item" data-type="logo">
+<img src="LOGO3.png">
+<p>تصميم لوقو – أنيق وجذاب</p>
+<a href="https://wa.me/966537439959" class="order-btn">اطلب نفس الخدمة</a>
+</div>
 
-        <div class="portfolio-item">
-            <img src="zz.jpeg" alt="عمل 5">
-            <p>واحد من البحوث اللي صممتها</p>
-        </div>
+<!-- عرض -->
+<div class="portfolio-item" data-type="ppt">
+<img src="rr.png">
+<p>عرض تقديمي – أنيق ومرتب</p>
+<a href="https://wa.me/966537439959" class="order-btn">اطلب نفس الخدمة</a>
+</div>
 
-    </div>
+<!-- فيديو -->
+<div class="portfolio-item" data-type="video">
+<img src="images/work3.jpg">
+<p>مونتاج فيديو – إخراج احترافي</p>
+<a href="https://wa.me/966537439959" class="order-btn">اطلب نفس الخدمة</a>
+</div>
 
-    <a href="index.html" style="display:block;margin-top:40px;text-decoration:none;color:#333;">
-        ← الرجوع للصفحة الرئيسية
-    </a>
+<!-- بحث -->
+<div class="portfolio-item" data-type="ppt">
+<img src="zz.jpeg">
+<p>تنسيق بحث – مرتب وواضح</p>
+<a href="https://wa.me/966537439959" class="order-btn">اطلب نفس الخدمة</a>
+</div>
+
+</div>
+
+<a href="index.html" class="back-link">
+← الرجوع للصفحة الرئيسية
+</a>
 
 </section>
 
+<script>
+
+/* فلترة */
+function filter(type) {
+let items = document.querySelectorAll(".portfolio-item");
+
+items.forEach(item => {
+if (type === "all" || item.dataset.type === type) {
+item.style.display = "block";
+} else {
+item.style.display = "none";
+}
+});
+}
+
+</script>
+
 </body>
 </html>
-
 
 
 
