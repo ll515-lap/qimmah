@@ -11,27 +11,16 @@
 body {
     font-family: "Cairo", sans-serif;
     background-color: #c8bcb8;
-    color: #222;
-    margin: 0;
     text-align: center;
+    margin: 0;
 }
 
 /* عنوان */
 h2 {
-    margin-bottom: 10px;
-    font-size: 26px;
-}
-
-p {
-    color: #444;
-    font-size: 15px;
+    font-size: 28px;
 }
 
 /* فلتر */
-.filter-buttons {
-    margin-bottom: 20px;
-}
-
 .filter-buttons button {
     margin: 5px;
     padding: 8px 15px;
@@ -47,53 +36,64 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 40px;
-    max-width: 900px;
-    margin: auto;
 }
 
 /* العنصر */
 .portfolio-item {
-    background: rgba(255,255,255,0.8);
-    padding: 15px;
+    background: #fff;
+    padding: 12px;
     border-radius: 12px;
-    transition: 0.3s;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: scale(1.04);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* الصور */
+/* الصورة */
 .portfolio-item img {
     width: 100%;
     border-radius: 10px;
-    transition: 0.3s;
 }
 
-.portfolio-item:hover img {
-    transform: scale(1.05);
-}
-
-/* زر الطلب */
+/* زر */
 .order-btn {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 15px;
-    background: #2f2f2f;
+    background: black;
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 14px;
 }
 
-/* رجوع */
-.back-link {
-    display: block;
-    margin: 40px;
-    text-decoration: none;
-    color: #333;
+/* مودال */
+.modal {
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
 }
 
 </style>
@@ -101,14 +101,9 @@ p {
 
 <body>
 
-<section style="padding:60px 0;">
+<h2>🔥 معرض أعمال قِمّة</h2>
 
-<h2>معرض أعمال قِمّة</h2>
-<p style="margin-bottom:30px;">
-نماذج من أعمالنا في التصميم والمونتاج والعروض التقديمية
-</p>
-
-<!-- فلتر -->
+<!-- فلترة -->
 <div class="filter-buttons">
 <button onclick="filter('all')">الكل</button>
 <button onclick="filter('logo')">لوقو</button>
@@ -118,71 +113,50 @@ p {
 
 <div class="portfolio-container">
 
-<!-- لوقو -->
 <div class="portfolio-item" data-type="logo">
-<img src="logo2.png">
-<p>تصميم لوقو – ستايل بسيط وراقي</p>
-<a href="https://wa.me/966537439959" class="order-btn">اطلب نفس الخدمة</a>
+<img src="logo2.png" onclick="openModal(this.src)">
+<p>تصميم لوقو احترافي</p>
+<a href="https://wa.me/966537439959" class="order-btn">اطلب</a>
 </div>
 
-<div class="portfolio-item" data-type="logo">
-<img src="LOGO3.png">
-<p>تصميم لوقو – أنيق وجذاب</p>
-<a href="https://wa.me/966537439959" class="order-btn">اطلب نفس الخدمة</a>
-</div>
-
-<!-- عرض -->
 <div class="portfolio-item" data-type="ppt">
-<img src="rr.png">
-<p>عرض تقديمي – أنيق ومرتب</p>
-<a href="https://wa.me/966537439959" class="order-btn">اطلب نفس الخدمة</a>
-</div>
-
-<!-- فيديو -->
-<div class="portfolio-item" data-type="video">
-<img src="images/work3.jpg">
-<p>مونتاج فيديو – إخراج احترافي</p>
-<a href="https://wa.me/966537439959" class="order-btn">اطلب نفس الخدمة</a>
-</div>
-
-<!-- بحث -->
-<div class="portfolio-item" data-type="ppt">
-<img src="zz.jpeg">
-<p>تنسيق بحث – مرتب وواضح</p>
-<a href="https://wa.me/966537439959" class="order-btn">اطلب نفس الخدمة</a>
+<img src="rr.png" onclick="openModal(this.src)">
+<p>عرض تقديمي</p>
+<a href="https://wa.me/966537439959" class="order-btn">اطلب</a>
 </div>
 
 </div>
 
-<a href="index.html" class="back-link">
-← الرجوع للصفحة الرئيسية
-</a>
-
-</section>
+<!-- مودال -->
+<div id="modal" class="modal">
+<span class="close" onclick="closeModal()">×</span>
+<img id="modal-img">
+</div>
 
 <script>
 
-/* فلترة */
-function filter(type) {
+function filter(type){
 let items = document.querySelectorAll(".portfolio-item");
 
-items.forEach(item => {
-if (type === "all" || item.dataset.type === type) {
-item.style.display = "block";
-} else {
-item.style.display = "none";
-}
+items.forEach(item=>{
+item.style.display = (type === "all" || item.dataset.type === type)
+? "block" : "none";
 });
+}
+
+function openModal(src){
+document.getElementById("modal").style.display = "flex";
+document.getElementById("modal-img").src = src;
+}
+
+function closeModal(){
+document.getElementById("modal").style.display = "none";
 }
 
 </script>
 
 </body>
 </html>
-
-
-
-
 
 
 
