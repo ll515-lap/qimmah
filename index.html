@@ -1,497 +1,249 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>لمسة ليث | خدمات التصميم</title>
-  <style>
-    /* حركة الدخول الناعمة */
-.service {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeInUp 1.0s ease forwards;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.service:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.service:nth-child(3) {
-  animation-delay: 0.5s;
-}
-.service:nth-child(4) {
-  animation-delay: 0.8s;
-}
+<title>قِمّة | Qimmah - خدمات رقمية</title>
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+<style>
 
-    body {
-      font-family: "Cairo", sans-serif;
-      background-color: #c8bcb8;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    header {
-      padding: 25px 0 10px;
-    }
-
-    header img {
-      width: 120px;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    h1 {
-      color: #2f2f2f;
-      margin: 10px 0 20px;
-      font-size: 26px;
-    }
-
-.about {
-  width: 92%;
-  max-width: 1000px;
-  margin: 16px auto 28px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  animation: aboutFade 0.6s ease both;
-}
-
-.about-inner {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  flex-direction: row-reverse; 
-}
-
-.about-img img {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid rgba(255,255,255,0.12);
-  display: block;
-}
-
-.about-text h2 {
-  margin: 0 0 8px;
-  font-size: 20px;
+body {
+  font-family: "Cairo", sans-serif;
+  background: #c8bcb8;
+  margin: 0;
+  text-align: center;
   color: #2f2f2f;
 }
 
-.about-text p {
-  margin: 0 0 12px;
-  color: #514c48;
-  line-height: 1.6;
-  font-size: 15px;
-  text-align: left; 
+/* ===== Header ===== */
+header {
+  padding: 30px 10px;
 }
 
-.about .whatsapp-button {
-  padding: 10px 18px;
-  font-size: 15px;
-  border-radius: 10px;
+header img {
+  width: 110px;
+  border-radius: 12px;
 }
 
-
-@media (max-width: 600px) {
-  .about-inner {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  .about-img img {
-    width: 95px;
-    height: 95px;
-  }
-  .about-text p {
-    text-align: center;
-  }
+header h1 {
+  margin: 10px 0 5px;
 }
 
-@keyframes aboutFade {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
+header p {
+  color: #6b5f5a;
+  font-size: 14px;
 }
 
+/* ===== Section General ===== */
+section {
+  padding: 30px 15px;
+}
+
+/* ===== About ===== */
 #about {
-    max-width: 650px;
-    margin: 20px auto;
-    padding: 25px;
-    line-height: 1.9;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.45);
-    border-radius: 15px;
-    backdrop-filter: blur(4px);
-    font-size: 17px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 15px;
+  margin: 20px;
+  padding: 20px;
 }
 
-/* عنوان من أنا */
-#about h2 {
-    font-size: 22px;
-    margin-bottom: 12px;
-    font-weight: 600;
-}
-
-
-
-#about {
-    text-align: center;
-    line-height: 1.9;
-    font-size: 18px;
-    padding: 25px;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.6);
-    margin-top: 20px;
-    margin-bottom: 25px;
-}
-
-.about-container {
-    background: #ffffffeb;
-    backdrop-filter: blur(4px);
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-}
-
-    .services {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      padding-bottom: 40px;
-    }
-
-    .service {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      width: 80%;
-      max-width: 400px;
-      padding: 15px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .service:hover {
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-      transform: scale(1.03);
-    }
-
-    .service h2 {
-      margin: 0 0 5px 0;
-      font-size: 20px;
-      color: #333;
-    }
-
-    .service p {
-      color: #555;
-      margin: 0;
-      font-size: 16px;
-    }
-
+/* ===== Services ===== */
 .services {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
 .service {
-    background: #ffffffd2;
-    padding: 18px;
-    border-radius: 18px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    cursor: pointer;
-    transition: 0.25s ease;
-    backdrop-filter: blur(4px);
+  background: #ffffffd2;
+  padding: 18px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .service:hover {
-    transform: translateY(-4px);
-    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
-
-.service h2 {
-    margin: 0;
-    font-size: 20px;
-    color: #3a2f2f;
-    font-weight: bold;
+/* ===== Why Us ===== */
+.why-box {
+  background: #ffffffd9;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 400px;
 }
 
-/* السعر */
-.service p {
-    margin: 8px 0 0;
-    font-size: 16px;
-    color: #5f5050;
+/* ===== Reviews ===== */
+.review {
+  background: #fff;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 400px;
 }
 
+.review span {
+  color: #777;
+}
 
-
-    .popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 100;
-    }
-
-    .popup-content {
-      background: #fffaf0;
-      padding: 25px;
-      border-radius: 15px;
-      width: 85%;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .popup-content h2 {
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .popup-content p {
-      color: #555;
-      margin-bottom: 20px;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .whatsapp-button {
-      background-color: #f4e8c1;
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 8px;
-      transition: 0.3s;
-      display: inline-block;
-    }
-
-    .whatsapp-button:hover {
-      background-color: #f1d97a;
-    }
-
-    .close-btn {
-      margin-top: 15px;
-      background: none;
-      border: none;
-      color: #666;
-      font-size: 15px;
-      cursor: pointer;
-      text-decoration: underline;
-    }
-    
-    .whatsapp-fixed {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
-  font-size: 16px;
-  font-weight: bold;
+/* ===== CTA Button ===== */
+.cta {
+  display: inline-block;
+  margin: 30px;
+  padding: 14px 25px;
+  background: #2f2f2f;
+  color: #fff;
+  border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1000;
 }
 
-.whatsapp-fixed:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+/* ===== Popup ===== */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
 }
 
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-.portfolio-link {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 12px;
-    background: #d8d3c4; 
-    color: #333;
-    font-size: 18px;
-    text-decoration: none;
-    transition: 0.3s ease;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+/* ===== Animation ===== */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s;
 }
 
-.portfolio-link:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-#footer {
-    background-color: #d9d2c7;
-    padding: 20px;
-    text-align: center;
-    margin-top: 50px;
-    border-top: 1px solid rgba(0,0,0,0.1);
+/* ===== Footer ===== */
+footer {
+  background: #d9d2c7;
+  padding: 20px;
+  margin-top: 30px;
 }
 
-#footer p {
-    margin: 0 0 8px 0;
-    font-size: 15px;
-    color: #444;
-}
-
-.portfolio-section {
-    padding: 40px 20px;
-    text-align: center;
-    background: transparent !important; 
-}
-
-.portfolio-section h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
-    color: #2f2f2f; 
-}
-
-  </style>
+</style>
 </head>
+
 <body>
-  <header class="fade-in">
-    <img src="lamsat.jpg" alt="شعار لمسة ليث">
-    <h1>لمسة ليث | خدمات التصميم</h1>
-  </header>
-  
-<section id="about" class="fade-in">
-    <div class="about-text">
-      <h2>من أنا؟</h2>
-      <p>
-        أنا ليث، شاب عمره 17 سنة اكتشف شغفه في التصميم بدري، وقرر يبني منه شي يفتخر فيه يومًا ما.
-        التصميم بالنسبة لي مو مجرد هواية، هو لغة أقدر أعبّر فيها عن أفكاري، وأحط فيها لمستي الخاصة… اللمسة اللي سميت فيها هذا المكان.
-        أنا ما أدّعي الكمال، لكني أتعلم كل يوم وأطوّر نفسي خطوة بخطوة. وطريق النجاح يصير أسهل وأجمل بدعمكم…
-        فلا تبخلون على ولدكم بكلمة، بنصيحة، أو بـ دفة بسيطة تخلّيه يكمل الطريق بثقة. 
-      </p>
-    </div>
-  </div>
+
+<!-- ===== Header ===== -->
+<header class="fade">
+<img src="logo.png">
+<h1>قِمّة | Qimmah</h1>
+<p>نصنع لك هوية رقمية تليق بك</p>
+</header>
+
+<!-- ===== About ===== -->
+<section id="about" class="fade">
+<h2>من نحن؟</h2>
+<p>
+نحن فريق قِمّة، مجموعة شباب نؤمن أن البداية البسيطة ممكن تتحول إلى شيء عظيم.
+نقدم خدمات تصميم ومحتوى رقمي بجودة عالية وأسعار مناسبة.
+</p>
 </section>
 
-  <section class="services">
-    <div class="service" onclick="openPopup('logo')">
-      <h2 class="fade-in">🎨 تصميم لوقو</h2>
-      <p>السعر: 6 ريال</p>
-    </div>
+<!-- ===== Services ===== -->
+<section class="services fade">
 
-    <div class="service" onclick="openPopup('presentation')">
-      <h2 class="fade-in">💻 عرض تقديمي</h2>
-      <p>السعر: 20 ريال (أو 3 ريال لكل شريحة)</p>
-    </div>
+<div class="service" onclick="openPopup('logo')">
+<h3>🎨 تصميم لوقو</h3>
+<p>6 ريال</p>
+</div>
 
-    <div class="service" onclick="openPopup('video')">
-      <h2 class="fade-in">🎬 مونتاج فيديو قصير</h2>
-      <p>السعر: 25 ريال</p>
-    </div>
+<div class="service" onclick="openPopup('video')">
+<h3>🎬 مونتاج فيديو</h3>
+<p>25 ريال</p>
+</div>
 
-    <div class="service" onclick="openPopup('research')">
-      <h2 class="fade-in">📚 بحوث ومشاريع</h2>
-      <p>السعر: 4 ريال لكل صفحة</p>
-    </div>
-  </section>
+<div class="service" onclick="openPopup('ppt')">
+<h3>💻 عروض تقديمية</h3>
+<p>20 ريال</p>
+</div>
 
-  <div id="popup-logo" class="popup">
-    <div class="popup-content">
-      <h2>تصميم لوقو</h2>
-      <p>تصميم شعار احترافي يعكس هوية مشروعك بأسلوب بسيط وأنيق، يعبر عنك ويترك انطباع دائم لدى عملائك.</p>
-      <a class="whatsapp-button" href="https://wa.me/966537439959" target="_blank">طلب الخدمة عبر واتساب</a>
-      <button class="close-btn" onclick="closePopup('logo')">إغلاق</button>
-    </div>
-  </div>
-
-  <div id="popup-presentation" class="popup">
-    <div class="popup-content">
-      <h2>عرض تقديمي</h2>
-      <p>تصميم عروض تقديمية جذابة ومنظمة بصريًا تساعدك على إيصال فكرتك باحتراف سواء في الدراسة أو العمل.</p>
-      <a class="whatsapp-button" href="https://wa.me/966537439959" target="_blank">طلب الخدمة عبر واتساب</a>
-      <button class="close-btn" onclick="closePopup('presentation')">إغلاق</button>
-    </div>
-  </div>
-
-  <div id="popup-video" class="popup">
-    <div class="popup-content">
-      <h2>مونتاج فيديو قصير</h2>
-      <p>مونتاج احترافي للمقاطع الإعلانية أو التعليمية أو الشخصية، بجودة عالية وتناسق بصري ملفت للأنظار.</p>
-      <a class="whatsapp-button" href= "https://wa.me/966537439959" target="_blank">طلب الخدمة عبر واتساب</a>
-      <button class="close-btn" onclick="closePopup('video')">إغلاق</button>
-    </div>
-  </div>
-
-  <div id="popup-research" class="popup">
-    <div class="popup-content">
-      <h2>بحوث ومشاريع</h2>
-      <p>مساعدة طلاب المدارس والجامعات وموظفي القطاعات المختلفة في إعداد البحوث والمشاريع بأسلوب منسق وواضح وبسعر رمزي لكل صفحة.</p>
-      <a class="whatsapp-button" href= "https://wa.me/966537439959" target="_blank">طلب الخدمة عبر واتساب</a>
-      <button class="close-btn" onclick="closePopup('research')">إغلاق</button>
-    </div>
-  </div>
-  <section class="portfolio-section">
-    <h2>معرض الأعمال :</h2>
-
-    <a href="portfolio.html" class="portfolio-link">
-        عرض الأعمال
-    </a>
 </section>
 
-  <script>
-    function openPopup(service) {
-      document.getElementById("popup-" + service).style.display = "flex";
-    }
-    function closePopup(service) {
-      document.getElementById("popup-" + service).style.display = "none";
-    }
-  </script>
-  <a href="https://wa.me/966537439959" target="_blank" class="whatsapp-fixed">
-   تواصل عبر واتساب
+<!-- ===== Why Us ===== -->
+<section class="fade">
+<h2>ليش تختار قِمّة؟</h2>
+
+<div class="why-box">🚀 سرعة في التنفيذ</div>
+<div class="why-box">🎯 جودة عالية</div>
+<div class="why-box">💰 أسعار مناسبة</div>
+<div class="why-box">🤝 تعامل راقي</div>
+
+</section>
+
+<!-- ===== Reviews ===== -->
+<section class="fade">
+<h2>آراء عملائنا</h2>
+
+<div class="review">
+<p>شغلهم سريع واحترافي 🔥</p>
+<span>- عميل</span>
+</div>
+
+<div class="review">
+<p>أفضل تجربة تعامل 👏</p>
+<span>- عميل</span>
+</div>
+
+</section>
+
+<!-- ===== CTA ===== -->
+<a href="https://wa.me/966537439959" class="cta">
+ابدأ مشروعك الآن 🚀
 </a>
+
+<!-- ===== Popup Example ===== -->
+<div id="popup-logo" class="popup">
+<div class="popup-content">
+<h2>تصميم لوقو</h2>
+<p>شعار احترافي يعكس هويتك</p>
+<a href="https://wa.me/966537439959">اطلب الآن</a>
+</div>
+</div>
+
+<!-- ===== JS ===== -->
 <script>
-    const elements = document.querySelectorAll('.fade-in');
 
-    function showElements() {
-        elements.forEach((el) => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 50) {
-                el.classList.add('show');
-            }
-        });
-    }
+function openPopup(id){
+document.getElementById("popup-"+id).style.display="flex";
+}
 
-    window.addEventListener('scroll', showElements);
-    window.addEventListener('load', showElements);
+window.addEventListener("scroll", ()=>{
+document.querySelectorAll(".fade").forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight - 50){
+el.classList.add("show");
+}
+});
+});
+
 </script>
 
-<footer id="footer">
-    <p>© 2025 لمسة ليث – جميع الحقوق محفوظة</p>
+<!-- ===== Footer ===== -->
+<footer>
+<p>© 2025 قِمّة | Qimmah</p>
 </footer>
 
 </body>
