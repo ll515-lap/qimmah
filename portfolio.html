@@ -11,16 +11,21 @@
 body {
     font-family: "Cairo", sans-serif;
     background-color: #c8bcb8;
-    text-align: center;
     margin: 0;
+    text-align: center;
 }
 
-/* عنوان */
+/* العنوان */
 h2 {
-    font-size: 28px;
+    margin-top: 40px;
+    font-size: 26px;
 }
 
-/* فلتر */
+/* الفلتر */
+.filter-buttons {
+    margin: 20px 0;
+}
+
 .filter-buttons button {
     margin: 5px;
     padding: 8px 15px;
@@ -36,171 +41,55 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 40px;
+    max-width: 1000px;
+    margin: auto;
 }
 
-/* العنصر */
+/* الكرت */
 .portfolio-item {
     background: #fff;
-    padding: 12px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s;
+    padding: 15px;
+    border-radius: 14px;
+    transition: 0.25s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .portfolio-item:hover {
-    transform: scale(1.04);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* الصورة */
+/* الصور (مضبوطة) */
 .portfolio-item img {
     width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background: #f2f2f2;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 /* زر */
 .order-btn {
     display: inline-block;
     margin-top: 10px;
-    padding: 8px 15px;
-    background: black;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-}
-
-/* مودال */
-.modal {
-    display: none;
-    position: fixed;
-    background: rgba(0,0,0,0.8);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal img {
-    max-width: 90%;
-    border-radius: 10px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 25px;
-    color: white;
-    cursor: pointer;
-}
-
-</style>
-</head>
-
-<body>
-
-<h2>🔥 معرض أعمال قِمّة</h2>
-
-<!-- فلترة -->
-<div class="filter-buttons">
-<button onclick="filter('all')">الكل</button>
-<button onclick="filter('logo')">لوقو</button>
-<button onclick="filter('ppt')">عروض</button>
-<button onclick="filter('video')">مونتاج</button>
-</div>
-
-<div class="portfolio-container">
-
-<div class="portfolio-item" data-type="logo">
-<img src="logo2.png" onclick="openModal(this.src)">
-<p>تصميم لوقو احترافي</p>
-<a href="https://wa.me/966537439959" class="order-btn">اطلب</a>
-</div>
-
-<div class="portfolio-item" data-type="ppt">
-<img src="rr.png" onclick="openModal(this.src)">
-<p>عرض تقديمي</p>
-<a href="https://wa.me/966537439959" class="order-btn">اطلب</a>
-</div>
-
-</div>
-
-<!-- مودال -->
-<div id="modal" class="modal">
-<span class="clos<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>معرض الأعمال – قِمّة | Qimmah</title>
-
-<style>
-
-body {
-    font-family: "Cairo", sans-serif;
-    background-color: #c8bcb8;
-    margin: 0;
-    text-align: center;
-}
-
-/* الشبكة */
-.portfolio-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-    padding: 30px;
-    max-width: 900px;
-    margin: auto;
-}
-
-/* العنصر */
-.portfolio-item {
-    background: rgba(255,255,255,0.85);
-    padding: 12px;
-    border-radius: 12px;
-    transition: 0.25s;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
-
-/* الصورة (ثابتة بدون تضخيم مزعج) */
-.portfolio-item img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* زر */
-.order-btn {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 6px 12px;
+    padding: 8px 16px;
     background: #2f2f2f;
     color: #fff;
-    border-radius: 6px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 14px;
 }
 
-/* فلتر */
-.filter-buttons button {
-    margin: 5px;
-    padding: 7px 14px;
-    border: none;
-    border-radius: 7px;
-    background: #d8d3c4;
-    cursor: pointer;
+/* الرجوع */
+.back-link {
+    display: block;
+    margin: 30px;
+    text-decoration: none;
+    color: #333;
 }
 
-/* مودال */
+/* المودال (مخفي صح) */
 .modal {
     display: none;
     position: fixed;
@@ -211,6 +100,7 @@ body {
     left: 0;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .modal img {
@@ -227,13 +117,6 @@ body {
     cursor: pointer;
 }
 
-.back-link {
-    display: block;
-    margin: 30px;
-    text-decoration: none;
-    color: #333;
-}
-
 </style>
 </head>
 
@@ -241,6 +124,7 @@ body {
 
 <h2>معرض أعمال قِمّة</h2>
 
+<!-- الفلترة -->
 <div class="filter-buttons">
 <button onclick="filter('all')">الكل</button>
 <button onclick="filter('logo')">لوقو</button>
@@ -248,9 +132,8 @@ body {
 <button onclick="filter('video')">مونتاج</button>
 </div>
 
+<!-- الأعمال -->
 <div class="portfolio-container">
-
-<!-- رجعنا كل أعمالك 👇 -->
 
 <div class="portfolio-item" data-type="logo">
 <img src="logo2.png" onclick="openModal(this.src)">
@@ -284,18 +167,20 @@ body {
 
 </div>
 
-<!-- مودال -->
+<!-- المودال -->
 <div id="modal" class="modal">
 <span class="close" onclick="closeModal()">×</span>
 <img id="modal-img">
 </div>
 
-<a href="index.html" class="back-link">← الرجوع للرئيسية</a>
+<a href="index.html" class="back-link">← الرجوع للصفحة الرئيسية</a>
 
 <script>
 
+/* فلترة */
 function filter(type){
 let items = document.querySelectorAll(".portfolio-item");
+
 items.forEach(item=>{
 item.style.display =
 (type === "all" || item.dataset.type === type)
@@ -303,6 +188,7 @@ item.style.display =
 });
 }
 
+/* مودال */
 function openModal(src){
 document.getElementById("modal").style.display = "flex";
 document.getElementById("modal-img").src = src;
@@ -316,7 +202,6 @@ document.getElementById("modal").style.display = "none";
 
 </body>
 </html>
-
 
 
 
